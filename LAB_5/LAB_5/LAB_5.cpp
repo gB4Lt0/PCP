@@ -17,6 +17,7 @@ int min_sum_and_index_row(int);
 int main()
 {
 	initialize_array();
+	omp_set_nested(1);
 
 	double t1 = omp_get_wtime();
 
