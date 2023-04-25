@@ -3,9 +3,13 @@ with Ada.Integer_Text_IO;
 
 procedure Main is
 
-   num_threads : Integer := 8;
-   time_of_work : array (1..num_threads) of Duration :=  (1.0,2.0,5.0,4.0,7.0,3.0,6.0,8.0);
-   steps: array (1..num_threads) of Long_Long_Integer := (1,2,3,4,6,8,12,16);
+   --num_threads : Integer := 8;
+   --time_of_work : array (1..num_threads) of Duration :=  (1.0,2.0,5.0,4.0,7.0,3.0,6.0,8.0);
+   --steps: array (1..num_threads) of Long_Long_Integer := (1,2,3,4,6,8,12,16);
+
+   num_threads : Integer := 4;
+   time_of_work : array (1..num_threads) of Duration :=  (1.0,2.0,5.0,4.0);
+   steps: array (1..num_threads) of Long_Long_Integer := (1,2,3,4);
 
    can_stop: array (1..num_threads) of Boolean := (others => False);
 

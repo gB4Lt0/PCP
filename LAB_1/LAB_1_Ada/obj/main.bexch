@@ -1,17 +1,17 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-D:\Home_work\PCP_Lab\LAB_1\LAB_1_Ada\lab_1.gpr
-20230415192236 65a22571ff9351e8e220fd7d4de01e24
+D:\Home_work\PCP_Lab\PCP\LAB_1\LAB_1_Ada\lab_1.gpr
+20230415192236 45854dfb3ca2eb44bb5dd13098e20365
 [BOUND OBJECT FILES]
-D:\Home_work\PCP_Lab\LAB_1\LAB_1_Ada\obj\main.o
+D:\Home_work\PCP_Lab\PCP\LAB_1\LAB_1_Ada\obj\main.o
 [GENERATED SOURCE FILES]
 b__main.ads
 b__main.adb
 b__main.ali
 [RESULTING OPTIONS]
--LD:\Home_work\PCP_Lab\LAB_1\LAB_1_Ada\obj\
--LD:\Home_work\PCP_Lab\LAB_1\LAB_1_Ada\obj\
+-LD:\Home_work\PCP_Lab\PCP\LAB_1\LAB_1_Ada\obj\
+-LD:\Home_work\PCP_Lab\PCP\LAB_1\LAB_1_Ada\obj\
 -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
 -static
 -static-libgcc
