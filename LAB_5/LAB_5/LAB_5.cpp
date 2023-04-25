@@ -6,6 +6,8 @@ using namespace std;
 const int rows_count = 5000;
 const int cols_count = 5000;
 long long min_sum_row;
+/*int num_threads;*/
+const int num_threads = 8;
 
 int arr[rows_count][cols_count];
 
@@ -17,14 +19,21 @@ int min_sum_and_index_row(int);
 int main()
 {
 	initialize_array();
-	omp_set_nested(1);
+
+	//cout << "Enter number of threads: ";
+	//cin >> num_threads;
 
 	double t1 = omp_get_wtime();
+	omp_set_nested(1);
+
 
 	#pragma omp parallel sections
 	{
 		#pragma omp section
 		{
+
+			printf("sum_array_%d = %lld \n\n",num_threads, find_sum_array(num_threads));
+
 			/*cout << "sum 1 = " << find_sum_array(1) << endl;
 			cout << "sum 2 = " << find_sum_array(2) << endl;
 			cout << "sum 3 = " << find_sum_array(3) << endl;
@@ -35,18 +44,20 @@ int main()
 			cout << "sum 16 = " << find_sum_array(16) << endl;
 			/*cout << "sum 32 = " << find_sum_array(32) << endl;*/
 
-			printf("sum_array_1 = %lld \n\n", find_sum_array(1));
-			printf("sum_array_2 = %lld \n\n", find_sum_array(2));
-			printf("sum_array_3 = %lld \n\n", find_sum_array(3));
-			printf("sum_array_4 = %lld \n\n", find_sum_array(4));
-			printf("sum_array_6 = %lld \n\n", find_sum_array(6));
-			printf("sum_array_8 = %lld \n\n", find_sum_array(8));
-			printf("sum_array_16 = %lld \n\n", find_sum_array(16));
-			printf("sum_array_12 = %lld \n\n", find_sum_array(12));
+			//printf("sum_array_1 = %lld \n\n", find_sum_array(1));
+			//printf("sum_array_2 = %lld \n\n", find_sum_array(2));
+			//printf("sum_array_3 = %lld \n\n", find_sum_array(3));
+			//printf("sum_array_4 = %lld \n\n", find_sum_array(4));
+			//printf("sum_array_6 = %lld \n\n", find_sum_array(6));
+			//printf("sum_array_8 = %lld \n\n", find_sum_array(8));
+			//printf("sum_array_16 = %lld \n\n", find_sum_array(16));
+			//printf("sum_array_12 = %lld \n\n", find_sum_array(12));
 		}
 
 		#pragma omp section
 		{
+			printf("min_sum_%d = %lld, index = %d \n\n",num_threads, min_sum_row, min_sum_and_index_row(num_threads));
+
 			/*cout << "min_sum_row 1:= " << min_sum_row << "; index = " << min_sum_and_index_row(1) << endl;
 			cout << "min_sum_row 2:= " << min_sum_row << "; index = " << min_sum_and_index_row(2) << endl;
 			cout << "min_sum_row 3:= " << min_sum_row << "; index = " << min_sum_and_index_row(3) << endl;
@@ -56,14 +67,14 @@ int main()
 			cout << "min_sum_row 12: = " << min_sum_row << "; index = " << min_sum_and_index_row(12) << endl;
 			cout << "min_sum_row 16: = " << min_sum_row << "; index = " << min_sum_and_index_row(16) << endl;*/
 
-			printf("min_sum_1 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(1));
-			printf("min_sum_2 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(2));
-			printf("min_sum_3 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(3));
-			printf("min_sum_4 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(4));
-			printf("min_sum_6 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(6));
-			printf("min_sum_8 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(8));
-			printf("min_sum_12 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(12));
-			printf("min_sum_16 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(16));
+			//printf("min_sum_1 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(1));
+			//printf("min_sum_2 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(2));
+			//printf("min_sum_3 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(3));
+			//printf("min_sum_4 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(4));
+			//printf("min_sum_6 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(6));
+			//printf("min_sum_8 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(8));
+			//printf("min_sum_12 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(12));
+			//printf("min_sum_16 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(16));
 		}
 	}
 
