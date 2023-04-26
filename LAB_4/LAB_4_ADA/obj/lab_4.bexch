@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__lab_4.o
+[PROJECT FILES]
+D:\Home_work\PCP_Lab\LAB_4\LAB_4_ADA\lab_4.gpr
+20230424132634 c2059508901559f9a657857c875946d5
+[BOUND OBJECT FILES]
+D:\Home_work\PCP_Lab\LAB_4\LAB_4_ADA\obj\lab_4.o
+[GENERATED SOURCE FILES]
+b__lab_4.ads
+b__lab_4.adb
+b__lab_4.ali
+[RESULTING OPTIONS]
+-LD:\Home_work\PCP_Lab\LAB_4\LAB_4_ADA\obj\
+-LD:\Home_work\PCP_Lab\LAB_4\LAB_4_ADA\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnarl.a
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads
