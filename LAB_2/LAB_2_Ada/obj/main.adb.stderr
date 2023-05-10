@@ -1,0 +1,2 @@
+main.adb:52:80: warning: potentially unsynchronized barrier [enabled by default]
+main.adb:52:80: warning: "threads_count" should be private component of type [enabled by default]

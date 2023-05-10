@@ -3,8 +3,8 @@
 
 using namespace std;
 
-const int rows_count = 5000;
-const int cols_count = 5000;
+const int rows_count = 20000;
+const int cols_count = 10000;
 long long min_sum_row;
 /*int num_threads;*/
 const int num_threads = 8;
@@ -34,16 +34,6 @@ int main()
 
 			printf("sum_array_%d = %lld \n\n",num_threads, find_sum_array(num_threads));
 
-			/*cout << "sum 1 = " << find_sum_array(1) << endl;
-			cout << "sum 2 = " << find_sum_array(2) << endl;
-			cout << "sum 3 = " << find_sum_array(3) << endl;
-			cout << "sum 4 = " << find_sum_array(4) << endl;
-			cout << "sum 6 = " << find_sum_array(6) << endl;
-			cout << "sum 8 = " << find_sum_array(8) << endl;
-			cout << "sum 12 = " << find_sum_array(12) << endl;
-			cout << "sum 16 = " << find_sum_array(16) << endl;
-			/*cout << "sum 32 = " << find_sum_array(32) << endl;*/
-
 			//printf("sum_array_1 = %lld \n\n", find_sum_array(1));
 			//printf("sum_array_2 = %lld \n\n", find_sum_array(2));
 			//printf("sum_array_3 = %lld \n\n", find_sum_array(3));
@@ -58,15 +48,6 @@ int main()
 		{
 			printf("min_sum_%d = %lld, index = %d \n\n",num_threads, min_sum_row, min_sum_and_index_row(num_threads));
 
-			/*cout << "min_sum_row 1:= " << min_sum_row << "; index = " << min_sum_and_index_row(1) << endl;
-			cout << "min_sum_row 2:= " << min_sum_row << "; index = " << min_sum_and_index_row(2) << endl;
-			cout << "min_sum_row 3:= " << min_sum_row << "; index = " << min_sum_and_index_row(3) << endl;
-			cout << "min_sum_row 4:= " << min_sum_row << "; index = " << min_sum_and_index_row(4) << endl;
-			cout << "min_sum_row 6:= " << min_sum_row << "; index = " << min_sum_and_index_row(6) << endl;
-			cout << "min_sum_row 8:= " << min_sum_row << "; index = " << min_sum_and_index_row(8) << endl;
-			cout << "min_sum_row 12: = " << min_sum_row << "; index = " << min_sum_and_index_row(12) << endl;
-			cout << "min_sum_row 16: = " << min_sum_row << "; index = " << min_sum_and_index_row(16) << endl;*/
-
 			//printf("min_sum_1 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(1));
 			//printf("min_sum_2 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(2));
 			//printf("min_sum_3 = %lld, index = %d \n\n", min_sum_row, min_sum_and_index_row(3));
@@ -79,7 +60,6 @@ int main()
 	}
 
 	double t2 = omp_get_wtime();
-	/*cout << "Total time - " << t2 - t1 << " seconds\n";*/
 	printf("Total time - %f seconds\n\n", t2 - t1);
 	return 0;
 }
@@ -110,15 +90,10 @@ long long find_sum_array(int num_threads)
 			sum += arr[i][j];
 		}
 	}
-
-
 	double t2 = omp_get_wtime();
-
-	/*cout << "sum " << num_threads << " threads worked - " << t2 - t1 << " seconds\n";*/
 	printf("sum_array_time: %d threads worked - %f seconds\n", num_threads, t2 - t1);
 
 	return sum;
-
 }
 
 int min_sum_and_index_row(int num_threads)
@@ -149,8 +124,6 @@ int min_sum_and_index_row(int num_threads)
 	}
 
 	double t2 = omp_get_wtime();
-
-	/*cout << "min_sum_time: " << num_threads << " threads worked - " << t2 - t1 << " seconds\n";*/
 	printf("min_sum_time: %d threads worked - %f seconds\n", num_threads, t2 - t1);
 
 	return index;
